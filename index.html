@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#07101f" />
+  <meta name="description" content="CosmoVerse is an interactive guide to the universe." />
+  <title>CosmoVerse | Explore the Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=20260905-14" />
+</head>
+<body>
+  <div class="space-noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" data-route="home" aria-label="CosmoVerse home">
+      <span class="brand-mark"><span></span></span>
+      <span>Cosmo<span>Verse</span></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="#home" data-route="home" class="active">Home</a>
+      <a href="#explore" data-route="explore">Explore</a>
+      <a href="#solar-system" data-route="solar-system">Solar System</a>
+      <a href="#discover" data-route="discover">Discover</a>
+      <a href="#compare" data-route="compare">Compare</a>
+      <a href="#game" data-route="game">Cosmic Lab</a>
+    </nav>
+    <div class="topbar-actions">
+      <button class="icon-button" id="search-toggle" aria-label="Open search" title="Search the universe"><span class="search-icon"></span></button>
+      <button class="avatar-button" data-route="login" aria-label="Open sign in">CV</button>
+    </div>
+  </header>
+
+  <main id="app" tabindex="-1"></main>
+
+  <nav class="mobile-nav" aria-label="Mobile navigation">
+    <a href="#home" data-route="home" class="active"><span class="nav-symbol">⌂</span><span>Home</span></a>
+    <a href="#explore" data-route="explore"><span class="nav-symbol">✦</span><span>Explore</span></a>
+    <a href="#solar-system" data-route="solar-system"><span class="nav-symbol">◉</span><span>System</span></a>
+    <a href="#discover" data-route="discover"><span class="nav-symbol">✧</span><span>Discover</span></a>
+    <a href="#game" data-route="game"><span class="nav-symbol">✹</span><span>Play</span></a>
+    <a href="#favorites" data-route="favorites"><span class="nav-symbol">♡</span><span>My Cosmos</span></a>
+  </nav>
+
+  <div class="search-modal" id="search-modal" aria-hidden="true">
+    <div class="search-backdrop" data-close-search></div>
+    <section class="search-panel" role="dialog" aria-modal="true" aria-labelledby="search-heading">
+      <div class="search-panel-header">
+        <div>
+          <p class="eyebrow">Universal index</p>
+          <h2 id="search-heading">Search the universe</h2>
+        </div>
+        <button class="icon-button close-button" data-close-search aria-label="Close search">×</button>
+      </div>
+      <label class="search-input-wrap"><span class="search-icon"></span><input id="global-search" type="search" placeholder="Try “Jupiter”, “black holes”, “nearest star”..." autocomplete="off" /></label>
+      <div id="search-results" class="search-results"><p class="search-hint">Search planets, stars, galaxies, phenomena, missions and more.</p></div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
